@@ -124,7 +124,7 @@
             <div class="infoBtn emailBtn"><a href="mailto:<%= email %>" data-role="button">Email</a></div>
             <!--<div class="infoBtn mapBtn"><a href="geo:<%= location %>" data-role="button">See on Map</a></div>-->
             <div class="infoBtn mapBtn"><a href="maps:q=<%= location %>" data-role="button">See on Map</a></div>
-            <div class="infoBtn websiteBtn"><a onclick="openWebsite('<%= website %>');" data-role="button">Visit Site</a></div>
+            <div class="infoBtn websiteBtn"><a href="#" onclick="openWebsite('<%= website %>');" data-role="button">Visit Site</a></div>
             <!--<div class="infoBtn websiteBtn"><a data-role="button">Visit Site</a></div>-->
             <!--<div class="infoBtn websiteBtn"><a href="#" onclick='loadUrl("<%= website %>")'>Visit Site</a></div>-->
         </div>
@@ -161,7 +161,7 @@
       function openWebsite(url){
    
           try {
-             window.open(encodeURI(url),'_blank','location=no'); 
+             var ref = window.open(encodeURI(url),'_system'); 
          }
          catch (err)    
          {
