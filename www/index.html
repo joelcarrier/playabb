@@ -124,7 +124,7 @@
             <div class="infoBtn emailBtn"><a href="mailto:<%= email %>" data-role="button">Email</a></div>
             <!--<div class="infoBtn mapBtn"><a href="geo:<%= location %>" data-role="button">See on Map</a></div>-->
             <div class="infoBtn mapBtn"><a href="maps:q=<%= location %>" data-role="button">See on Map</a></div>
-            <div class="infoBtn websiteBtn"><a href="#" onclick="window.open('<%= website %>', target='_system', 'location=yes');" data-role="button">Visit Site</a></div>
+            <div class="infoBtn websiteBtn"><a href="#" onclick="openWebsite('<%= website %>');" data-role="button">Visit Site</a></div>
             <!--<div class="infoBtn websiteBtn"><a data-role="button">Visit Site</a></div>-->
             <!--<div class="infoBtn websiteBtn"><a href="#" onclick='loadUrl("<%= website %>")'>Visit Site</a></div>-->
         </div>
@@ -158,6 +158,17 @@
     $(function() { App.start(); })
     //]]>
 
+      function openWebsite(url){
+   
+          try {
+             window.open(encodeURI(url),'_blank','location=no'); 
+         }
+         catch (err)    
+         {
+             alert(err);
+         }
+  
+      }
 //    function loadURL(url){
 //        console.log(url);
 //        navigator.app.loadUrl(url, { openExternal:true });
